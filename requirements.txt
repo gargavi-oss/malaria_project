@@ -5,3 +5,5 @@ torchvision
 pillow
 numpy
 python-multipart
+scikit-image
+loguru
