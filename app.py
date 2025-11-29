@@ -92,6 +92,10 @@ async def predict(file: UploadFile = File(...)):
         "confidence": round(confidence * 100, 2)
     }
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "message": "API is healthy"}
+
 
 @app.get("/")
 def home():
