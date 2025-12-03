@@ -39,7 +39,7 @@ export default function AboutPage() {
           </div>
   
           <div className="p-6 border rounded-xl bg-white shadow hover:shadow-md transition">
-            <h2 className="font-semibold text-lg mb-2">👨‍💻 Created by Avi</h2>
+            <h2 className="font-semibold text-lg mb-2">👨‍💻 Created by Group 10</h2>
             <p className="text-gray-500 text-sm">
               Built with passion for AI, healthcare, and full-stack development.
             </p>
