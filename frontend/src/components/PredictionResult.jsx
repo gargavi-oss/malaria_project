@@ -1,13 +1,20 @@
 import React from "react";
+import toast from "react-hot-toast";
 
 export default function PredictionResult({ prediction, confidence, uploadedImage }) {
   const confidencePercent = Math.round(confidence * 100);
+  const notifyStart = (text) =>
+    toast.success(text, {
+      duration: 2000,
+    });
+
 
   return (
     <div className="border rounded-xl shadow-md p-6 bg-white space-y-6">
       {uploadedImage && (
         <img
           src={uploadedImage}
+          onClick={()=>notifyStart("Result of Your RBC blood Cell")}
           alt="Uploaded RBC"
           className="w-full max-h-64 object-contain border rounded-lg"
         />

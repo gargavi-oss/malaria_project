@@ -1,8 +1,14 @@
 import { Disclosure, Transition } from "@headlessui/react";
+import toast from "react-hot-toast";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const location = useLocation();
+  const notifyStart = (text) =>
+    toast.success(text, {
+      duration: 2000,
+    });
+
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -18,7 +24,7 @@ export default function Navbar() {
 
           <div className="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
 
-            <Link to="/" className="text-xl font-bold text-blue-600">
+            <Link to="/" onClick={()=>notifyStart("Welcome Back Home")} className="text-xl font-bold text-blue-600">
               Tiny Malaria Scan
             </Link>
 

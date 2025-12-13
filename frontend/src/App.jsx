@@ -11,13 +11,25 @@ import { Toaster } from "react-hot-toast";
 
 function Layout() {
 
-<Toaster position="top-center" />
+
   const location = useLocation();
 
   const isHome = location.pathname === "/";
 
   return (
     <div className="min-h-screen flex flex-col">
+     <Toaster
+  position="top-center"
+  toastOptions={{
+    duration: 2500,
+    style: {
+      borderRadius: "10px",
+      background: "#fff",
+      color: "#333",
+    },
+  }}
+/>
+
       <Navbar />
       <main
         className={
