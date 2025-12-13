@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import usePageTitle from "../hooks/usePageTitle.js";
 
 export default function Home() {
+  usePageTitle("Tiny Malaria Scan | Home")
 
-  // Show toast when page loads
   const notifyStart = () =>
     toast.success("Welcome! Start scanning your RBC images.", {
       duration: 2000,
@@ -15,15 +16,11 @@ export default function Home() {
       text-center relative overflow-hidden px-4"
       onClick={notifyStart}
     >
-
-      {/* Soft gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-teal-50 -z-10"></div>
 
-      {/* Decorative background blobs */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
       <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-teal-100 rounded-full blur-3xl opacity-40"></div>
 
-      {/* Hero Section */}
       <div className="max-w-3xl mx-auto space-y-6 animate-fade-in">
 
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
@@ -38,9 +35,8 @@ export default function Home() {
           detect parasitized & uninfected cells with medical-grade precision.
         </p>
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
 
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
           <Link
             to="/scan"
             className="px-6 py-3 text-lg bg-blue-600 text-white rounded-lg 
@@ -59,8 +55,6 @@ export default function Home() {
 
         </div>
       </div>
-
-      {/* Feature Tags */}
       <div className="mt-10 flex flex-wrap justify-center gap-3 opacity-70">
         <div className="px-4 py-2 bg-white rounded-md shadow text-sm border">
           ⚡ Real-time Inference

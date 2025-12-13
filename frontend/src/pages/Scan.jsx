@@ -1,7 +1,10 @@
 import { useState } from "react";
 import PredictionResult from "../components/PredictionResult";
+import usePageTitle from "../hooks/usePageTitle";
 
 export default function Scan() {
+  usePageTitle("Tiny Malaria Scan | Scan")
+
   const [imageURL, setImageURL] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -49,18 +52,16 @@ export default function Scan() {
         Upload a microscope image of an RBC cell to detect malaria infection.
       </p>
 
-      {/* Upload Area */}
       <label className="cursor-pointer block border-2 border-dashed border-gray-300 p-10 text-center rounded-lg hover:border-blue-400 transition">
         <p className="text-gray-600">Click to upload image</p>
         <input type="file" accept="image/*" className="hidden" onChange={handleUpload} />
       </label>
 
-      {/* Loading */}
       {loading && (
         <p className="mt-4 text-blue-600 font-medium">Analyzing image…</p>
       )}
 
-      {/* Result */}
+
       {result && imageURL && !loading && (
         <div className="mt-8">
           <PredictionResult

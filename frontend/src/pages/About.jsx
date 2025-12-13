@@ -1,8 +1,10 @@
+import usePageTitle from "../hooks/usePageTitle";
+
 export default function AboutPage() {
+  usePageTitle("Tiny Malaria Scan | About")
+
     return (
       <div className="max-w-5xl mx-auto px-6 py-10">
-  
-        {/* Page Title */}
         <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-teal-500 text-transparent bg-clip-text">
           About Tiny Malaria Scan
         </h1>
@@ -13,7 +15,6 @@ export default function AboutPage() {
           It is built to assist early screening — fast, lightweight, and explainable.
         </p>
   
-        {/* Feature Grid */}
         <div className="mt-10 grid md:grid-cols-2 gap-6">
   
           <div className="p-6 border rounded-xl bg-white shadow hover:shadow-md transition">
@@ -46,14 +47,9 @@ export default function AboutPage() {
           </div>
   
         </div>
-  
-        {/* Model Performance Section */}
         <h2 className="text-3xl font-bold mt-12 mb-6">Model Performance</h2>
-  
-        {/* Images Grid */}
         <div className="grid md:grid-cols-2 gap-8">
   
-          {/* Confusion Matrix */}
           <div className="border rounded-xl p-5 bg-white shadow hover:shadow-md transition">
             <h3 className="font-semibold text-lg mb-3">📊 Confusion Matrix</h3>
             <img
@@ -66,7 +62,6 @@ export default function AboutPage() {
             </p>
           </div>
   
-          {/* ROC Curve */}
           <div className="border rounded-xl p-5 bg-white shadow hover:shadow-md transition">
             <h3 className="font-semibold text-lg mb-3">📈 ROC Curve</h3>
             <img
